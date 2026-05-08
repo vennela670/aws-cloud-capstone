@@ -94,9 +94,9 @@ resource "aws_db_subnet_group" "rds_subnet_group" {
   name = "rds-subnet-group"
 
   subnet_ids = [
-  module.vpc.private_subnet_1_id,
-  module.vpc.private_subnet_2_id
-]
+    module.vpc.private_subnet_1_id,
+    module.vpc.private_subnet_2_id
+  ]
 
   tags = {
     Name = "rds-subnet-group"
@@ -126,11 +126,11 @@ resource "aws_db_instance" "mysql" {
 module "frontend_ec2" {
   source = "./modules/ec2"
 
-  ami_id             = "ami-07a00cf47dbbc844c"
-  instance_type      = "t2.micro"
-  subnet_id          = module.vpc.public_subnet_1_id
-  security_group_id  = aws_security_group.frontend_sg.id
-  instance_name      = "frontend-ec2"
+  ami_id            = "ami-07a00cf47dbbc844c"
+  instance_type     = "t2.micro"
+  subnet_id         = module.vpc.public_subnet_1_id
+  security_group_id = aws_security_group.frontend_sg.id
+  instance_name     = "frontend-ec2"
 
   key_name = "capstone-key"
 }
@@ -138,11 +138,11 @@ module "frontend_ec2" {
 module "backend_ec2" {
   source = "./modules/ec2"
 
-  ami_id             = "ami-07a00cf47dbbc844c"
-  instance_type      = "t2.micro"
-  subnet_id = module.vpc.public_subnet_1_id
-  security_group_id  = aws_security_group.backend_sg.id
-  instance_name      = "backend-ec2"
+  ami_id            = "ami-07a00cf47dbbc844c"
+  instance_type     = "t2.micro"
+  subnet_id         = module.vpc.public_subnet_1_id
+  security_group_id = aws_security_group.backend_sg.id
+  instance_name     = "backend-ec2"
 
   key_name = "capstone-key"
 }
