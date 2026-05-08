@@ -1,0 +1,20 @@
+# Terraform
+.terraform/
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraform.lock.hcl
+
+# Node.js
+node_modules/
+
+# React build
+build/
+
+# Environment variables
+.env
