@@ -140,7 +140,7 @@ module "backend_ec2" {
 
   ami_id             = "ami-07a00cf47dbbc844c"
   instance_type      = "t2.micro"
-  subnet_id          = module.vpc.private_subnet_1_id
+  subnet_id = module.vpc.public_subnet_1_id
   security_group_id  = aws_security_group.backend_sg.id
   instance_name      = "backend-ec2"
 
