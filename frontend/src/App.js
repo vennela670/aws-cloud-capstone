@@ -6,7 +6,7 @@ function App() {
 
   // Fetch tasks
   const fetchTasks = async () => {
-    const response = await fetch("http://localhost:5000/tasks");
+    const response = await fetch("http://3.108.223.64:5000/tasks");
     const data = await response.json();
     setTasks(data);
   };
@@ -22,7 +22,7 @@ function App() {
       return;
     }
 
-    await fetch("http://localhost:5000/tasks", {
+    await fetch("http://3.108.223.64:5000/tasks", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
